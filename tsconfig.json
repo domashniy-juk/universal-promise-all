@@ -1,0 +1,21 @@
+{
+    "include": ["./src/*"],
+    "exclude": ["./node_modules/"],
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "commonjs",
+        "baseUrl": "./src",
+        "sourceMap": true,
+        "strict": true,
+        "declaration": true,
+        "allowSyntheticDefaultImports": true,
+        "allowUnreachableCode": true,
+        "downlevelIteration": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "esModuleInterop": true,
+        "outDir": "./lib"
+    }
+}
