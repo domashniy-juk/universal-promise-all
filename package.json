@@ -2,8 +2,8 @@
   "name": "@domashniy-juk/universal-promise-all",
   "version": "1.0.0",
   "description": "Function that work with Array/Object/Map of promises, how Promise.all",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/universalPromiseAll.js",
+  "types": "lib/universalPromiseAll.d.ts",
   "scripts": {
     "build": "tsc --project tsconfig.json",
     "test": "mocha --recursive --require source-map-support/register --require ts-node/register  test/**/*.spec.ts",
