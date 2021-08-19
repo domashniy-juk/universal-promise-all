@@ -1,25 +1,24 @@
-type PromiseType = Promise<unknown>;
-export type UniversalPromiseAllInputType = Map<string, PromiseType> | Record<string, PromiseType> | PromiseType[];
-export type UniversalPromiseAllReturnType = Promise<Map<string, unknown>  | Record<string, unknown> | unknown[]>;
+export type UniversalPromiseAllInputType<T> = {
+    [P in keyof T]: Promise<T[P]>;
+};
 
-const universalPromiseAll = (request: UniversalPromiseAllInputType): UniversalPromiseAllReturnType => {
+export type UniversalPromiseAllReturnType<T> = {
+    [P in keyof T]: T[P];
+};
+
+const universalPromiseAll = <T>(request: UniversalPromiseAllInputType<T>): Promise<UniversalPromiseAllReturnType<T>> => {
     if (!request || typeof request !== 'object') {
-        return Promise.reject(new TypeError('The input argument must be (Array | Object | Map)'));
+        return Promise.reject(new TypeError('The input argument must be (Array | Object)'));
     }
 
     if (Array.isArray(request)) {
-        return Promise.all(request);
+        return Promise.all(request) as any;
     }
 
-    const isMap = request instanceof Map;
-    const requestArrayWithKeys = (isMap ? Array.from((request as Map<string, unknown>).entries()) : Object.entries(request));
-    const requestArrayWithoutKeys = requestArrayWithKeys.map(it => it[1]);
-    return Promise.all(requestArrayWithoutKeys)
+    const requestArrayWithKeys = Object.entries(request);
+    return Promise.all(requestArrayWithKeys.map(it => it[1]))
         .then(result => {
-            const resultWithKeys: [string, unknown][] = requestArrayWithKeys.map((it, i) => [it[0], result[i]]);
-            if (isMap) {
-                return new Map(resultWithKeys);
-            }
+            const resultWithKeys = requestArrayWithKeys.map((it, i) => [it[0], result[i]]);
             return Object.fromEntries(resultWithKeys);
         });
 }

@@ -1,0 +1,9 @@
+.idea
+node_modules
+src
+test
+.editorconfig
+.eslintrc
+.gitignore
+.prettierrc
+.tsconfig
