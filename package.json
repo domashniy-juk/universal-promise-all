@@ -1,5 +1,5 @@
 {
-  "name": "@domashniy-juk/universal-promise-all",
+  "name": "universal-promise-all",
   "version": "1.0.0",
   "description": "Function that work with Array/Object/Map of promises, how Promise.all",
   "main": "lib/universalPromiseAll.js",
