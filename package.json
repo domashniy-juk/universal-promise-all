@@ -1,6 +1,6 @@
 {
   "name": "universal-promise-all",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Function that work with Array or Object of promises, how Promise.all",
   "main": "lib/universalPromiseAll.js",
   "types": "lib/universalPromiseAll.d.ts",
