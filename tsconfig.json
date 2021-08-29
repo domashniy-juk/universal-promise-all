@@ -2,7 +2,7 @@
     "include": ["./src/*"],
     "exclude": ["./node_modules/"],
     "compilerOptions": {
-        "target": "ESNext",
+        "target": "es5",
         "module": "commonjs",
         "baseUrl": "./src",
         "sourceMap": true,
@@ -16,6 +16,9 @@
         "noImplicitAny": false,
         "removeComments": true,
         "esModuleInterop": true,
-        "outDir": "./lib"
+        "outDir": "./lib",
+        "lib": [
+            "es2019"
+          ]
     }
 }

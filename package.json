@@ -34,7 +34,6 @@
     "lib": "lib",
     "test": "test"
   },
-  "dependencies": {},
   "keywords": [
     "promise",
     "promise.all",

@@ -6,7 +6,7 @@ universal-promise-all supports not only arrays, but also objects.
 ---
 
 ## Requirements
-universal-promise-all use arrow function and Object.(entries/fromEntries). Therefore, in some cases, polyfills are necessary.
+universal-promise-all (target ES5) use arrow function and Object.(entries/fromEntries). Therefore, in some cases, es2019 polyfills are necessary.
 
 ## Usage example (Typescript):
 ```javascript
